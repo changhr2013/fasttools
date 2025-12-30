@@ -1,10 +1,17 @@
-import SetOperations from './components/SetOperations'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Layout from './components/Layout';
+import SetOperations from './components/SetOperations';
 
 function App() {
   return (
-    <div className="min-h-screen bg-background font-sans antialiased text-foreground">
-      <SetOperations />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<SetOperations />} />
+          {/* Add more routes here for future tools */}
+        </Route>
+      </Routes>
+    </Router>
   )
 }
 
